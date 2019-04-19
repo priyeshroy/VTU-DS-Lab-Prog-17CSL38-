@@ -28,7 +28,7 @@ struct node *createnode()
 	temp->link=NULL;
 	return temp;
 }
-void insertfront()
+void Insertfront()
 {
 	struct node *SLL=NULL;
 	SLL=createnode();
@@ -36,7 +36,7 @@ void insertfront()
 		SLL->link=head;
 	head=SLL;
 }
-void delfront()
+void Delfront()
 {
 	struct node *SLL=head;
 	printf("The deleted node is: \n");
@@ -48,7 +48,7 @@ void delfront()
 	head=SLL->link;
 	free(SLL);
 }
-void insertend()
+void Insertend()
 {
 		struct node *SLL,*temp=head;
 		SLL=createnode();
@@ -61,7 +61,7 @@ void insertend()
 		}
 		temp->link=SLL;
 }
-void deleteend()
+void Deleteend()
 {
 	struct node *temp=head;
 	struct node *t;
@@ -84,7 +84,7 @@ void deleteend()
 		t->link=NULL;
 	}
 }
-void create()
+void Create()
 {
 	int i,n;
 	printf("Enter the no. of students\n");
@@ -94,7 +94,7 @@ void create()
 		insertfront();
 	}
 }
-void display()
+void Display()
 {
 	int c=0;
 	struct node *temp=head;
@@ -111,7 +111,7 @@ void display()
 	}
 	printf("The no. of nodes: %d",c);
 }
-void stack()
+void Stack()
 {
 	int choice;
 	printf("\n 1:PUSH \n 2:POP \n 3:DISPLAY \n Enter your choice: ");
@@ -119,13 +119,13 @@ void stack()
 	switch(choice)
 	{
 		case 1: printf("Enter the elements to be pushed onto the stack \n");
-				insertfront();
+				Insertfront();
 				break;
 		case 2: printf("The popped node is: \n");
-				delfront();
+				Delfront();
 				break;
 		case 3: printf("The stack is: \n");
-				display();
+				Display();
 				break;
 	}
 }
@@ -139,25 +139,25 @@ int main()
 		scanf("%d",&ch1);
 		switch(ch1)
 		{
-			case 1: create();
+			case 1: Create();
 					break;
-			case 2: display();
+			case 2: Display();
 					break;
 			case 3: printf("Enter your choice: \n 1:Insert \n 2:Delete\n");
 					scanf("%d",&ch2);
 					if(ch2==1)
-						insertend();
+						Insertend();
 					else
-						deleteend();		
+						Deleteend();		
 					break;
 			case 4: printf("Enter your choice: \n1:Insert \n 2:Delete\n");
 					scanf("%d",&ch3);
 					if(ch3==1)
-						insertfront();
+						Insertfront();
 					else
-						delfront();
+						Delfront();
 					break;
-			case 5: stack();
+			case 5: Stack();
 					break;
 			case 6: exit(0);
 		}
