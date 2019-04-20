@@ -32,7 +32,7 @@ struct node *createnode()
 	temp->llink=NULL;
 	return temp;
 }
-void insertfront()
+void Insertfront()
 {
 	struct node *DLL=NULL;
 	DLL=createnode();
@@ -41,7 +41,7 @@ void insertfront()
 		head->llink=DLL;
 	head=DLL;
 }
-void delfront()
+void Delfront()
 {
 	struct node *DLL=head;
 	printf("The deleted node is: \n");
@@ -55,7 +55,7 @@ void delfront()
 	head->lliNk=NULL;
 	free(DLL);
 }
-void insertend()
+void Insertend()
 {
 		struct node *DLL,*temp=head;
 		DLL=createnode();
@@ -69,7 +69,7 @@ void insertend()
 		temp->rlink=DLL;
 		DLL->llink=temp;
 }
-void deleteend()
+void Deleteend()
 {
 	struct node *temp=head;
 	struct node *t;
@@ -93,7 +93,7 @@ void deleteend()
 		t->rlink=NULL;
 	}
 }
-void create()
+void Create()
 {
 	int i,n;
 	printf("Enter the no. of employees\n");
@@ -103,7 +103,7 @@ void create()
 		insertend();
 	}
 }
-void display()
+void Display()
 {
 	int c=0;
 	struct node *temp=head;
@@ -121,7 +121,7 @@ void display()
 	}
 	printf("The no. of nodes: %d",c);
 }
-void dequeue()
+void Dequeue()
 {
 	int choice;
 	printf("\n 1:Insert at front \n 2:Insert at rear \n 3:Delete from front \n 4:Delete from rear\n 5:Display\n Enter your choice:\n");
@@ -148,25 +148,25 @@ int main()
 		scanf("%d",&ch1);
 		switch(ch1)
 		{
-			case 1: create();
+			case 1: Create();
 					break;
-			case 2: display();
+			case 2: Display();
 					break;
 			case 3: printf("Enter your choice: \n 1:Insert \n 2:Delete\n");
 					scanf("%d",&ch2);
 					if(ch2==1)
-						insertend();
+						Insertend();
 					else
-						deleteend();		
+						Deleteend();		
 					break;
 			case 4: printf("Enter your choice: \n1:Insert \n 2:Delete\n");
 					scanf("%d",&ch3);
 					if(ch3==1)
-						insertfront();
+						Insertfront();
 					else
-						delfront();
+						Delfront();
 					break;
-			case 5: dequeue();
+			case 5: Dequeue();
 					break;
 			case 6: exit(0);
 		}
