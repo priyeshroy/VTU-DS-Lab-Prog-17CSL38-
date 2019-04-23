@@ -3,7 +3,7 @@
 #define MAX 5
 char CQ[MAX];
 int f=-1,r=-1;
-void insert(char ele)
+void Insert(char ele)
 {
     if(cqfull())
         printf("Queue is full\n");
@@ -15,7 +15,7 @@ void insert(char ele)
         CQ[r]=ele;
     }
 }
-char del()
+char Del()
 {
     char ele;
     if(cqempty())
@@ -50,7 +50,7 @@ int cqempty()
         return 1;
     return 0;
 }
-void display()
+void Display()
 {
     int i;
     if(cqempty())
@@ -76,13 +76,13 @@ int main()
        {
            case 1:printf("Enter the character\n");
                     scanf("%s",&ele);
-                    insert(ele);
+                    Insert(ele);
                     break;
-            case 2:ele=del();
+            case 2:ele=Del();
                     if(ele!=-1)
                         printf("Deleted character is %c",ele);
                     break;
-            case 3:display();
+            case 3:Display();
                     break;
             case 4:exit(0);
        }
