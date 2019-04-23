@@ -1,21 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 int n;
-void read(int a[10])
+void Read(int a[10])
 {
     int i;
     printf("Enter elements\n");
     for(i=0;i<n;i++)
         scanf("%d",&a[i]);
 }
-void print(int a[10])
+void Print(int a[10])
 {
     int i;
     printf("Elements of array are:\n");
     for(i=0;i<n;i++)
         printf("%d",a[i]);
 }
-void insert(int a[10],int ele,int pos)
+void Insert(int a[10],int ele,int pos)
 {
     int i;
     for(i=n-1;i>=pos-1;i--)
@@ -23,7 +23,7 @@ void insert(int a[10],int ele,int pos)
     a[pos-1]=ele;
     n++;
 }
-int delete(int a[10],int pos)
+int Delete(int a[10],int pos)
 {
     int i,ele;
     ele=a[pos-1];
@@ -44,19 +44,19 @@ int main()
         {
             case 1:printf("Enter the number of terms\n");
                     scanf("%d",&n);
-                    read(a);
+                    Read(a);
                     break;
-            case 2:print(a);
+            case 2:Print(a);
                     break;
             case 3:printf("Enter position\n");
                     scanf("%d",&pos);
                     printf("Enter element \n");
                     scanf("%d",&ele);
-                    insert(a,ele,pos);
+                    Insert(a,ele,pos);
                     break;
             case 4:printf("Enter position\n");
                     scanf("%d",&pos);
-                    ele=delete(a,pos);
+                    ele=Delete(a,pos);
                     printf("Element deleted is:%d\n",ele);
                     break;
             case 5:exit(0);
