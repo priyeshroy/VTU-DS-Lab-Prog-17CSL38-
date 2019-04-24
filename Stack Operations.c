@@ -3,29 +3,29 @@
 #define MAX 3
 char s[MAX];
 int top=-1;
-int isfull()
+int Isfull()
 {
     if(top==MAX-1)
         return 1;
     return 0;
 }
-int isempty()
+int Isempty()
 {
     if(top==-1)
         return 1;
     return 0;
 }
-void push(char ch)
+void Push(char ch)
 {
-    if(!isfull())
+    if(!Isfull())
     s[++top]=ch;
     else
         printf("\nOverflow\n");
 }
-char pop()
+char Pop()
 {
     char ch;
-    if(!isempty())
+    if(!Isempty())
     {
         ch=s[top--];
         return ch;
@@ -36,9 +36,9 @@ char pop()
         return -1;
     }
 }
-void display()
+void Display()
 {
-    if(isempty())
+    if(Isempty())
         printf("Stack is Empty\n");
     else
     {
@@ -51,15 +51,15 @@ void display()
         printf("\n");
     }
 }
-int palin(char str[3])
+int Palin(char str[3])
 {
     int i;
     top=-1;
     for(i=0;str[i];i++)
-        push(str[i]);
+        Push(str[i]);
     for(i=0;str[i];i++)
     {
-        if(str[i]!=pop())
+        if(str[i]!=Pop())
             return 0;
     }
     return 1;
@@ -77,17 +77,17 @@ int main()
     {
         case 1:printf("Enter a number\n");
                 scanf("%s",&ele);
-                push(ele);
+                Push(ele);
                 break;
-        case 2:ele=pop();
+        case 2:ele=Pop();
                 if(ele!=-1)
                     printf("Popped %c\n",ele);
                 break;
-        case 3:display();
+        case 3:Display();
                 break;
         case 4:printf("Enter a three letter string\n");
                 scanf("%s",&p);
-                pal=palin(p);
+                pal=Palin(p);
                 if(pal==1)
                     printf("Palindrome\n");
                 else
